@@ -1,13 +1,13 @@
-/* Body with solid black background */
+/* Global Reset and Background */
 body {
   margin: 0;
-  background-color: #000000; /* Clean black */
+  background-color: #000000; /* Pure black */
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: white;
   overflow-x: hidden;
 }
 
-/* Sharp glowing light blue + golden name */
+/* Glowing Full Name */
 .glow-text {
   display: inline-block;
   font-size: 60px;
@@ -15,34 +15,32 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #00ffff;
   text-shadow:
-    0 0 2px #00ffff,
-    0 0 6px #00ffff,
-    0 0 12px #FFD700;
+    0 0 4px #00ffff,
+    0 0 8px #00ffff;
   white-space: nowrap;
   overflow: hidden;
   border-right: 2px solid #00ffff;
 }
 
-/* Typing effect */
+/* Typing Effect */
 .typing-text {
   width: 0;
-  animation: typing 3s steps(20, end) forwards, blink 0.7s step-end infinite;
+  animation: typing 3s steps(30, end) forwards, blink 0.7s step-end infinite;
 }
 
-/* Typing keyframes */
+/* Keyframes for typing and blinking cursor */
 @keyframes typing {
   from { width: 0; }
-  to { width: 20ch; } /* Adjust if needed */
+  to { width: 16ch; } /* Enough for full name */
 }
 
-/* Cursor blink */
 @keyframes blink {
   50% {
     border-color: transparent;
   }
 }
 
-/* Lightning ripple flash */
+/* Ripple Flash on click */
 @keyframes flashFade {
   0% {
     opacity: 0.9;
@@ -52,8 +50,12 @@ body {
   }
 }
 
-/* General links */
+/* Links */
 a {
   color: #00ffff;
   text-decoration: none;
+}
+
+a:hover {
+  color: #ffffff;
 }
