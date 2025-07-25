@@ -3,30 +3,47 @@ import { motion } from "framer-motion";
 
 export default function QawserPortfolio() {
   const sectionStyle = {
-    border: "1px solid #00ffff",
+    border: "1px solid rgba(255, 255, 255, 0.2)",
     borderRadius: "12px",
     padding: "30px",
     marginBottom: "30px",
-    backgroundColor: "rgba(0, 0, 0, 0.4)",
-    boxShadow: "0 0 20px rgba(0, 255, 255, 0.2)",
-    backdropFilter: "blur(8px)",
+    backgroundColor: "rgba(255, 255, 255, 0.05)",
+    boxShadow: "0 0 20px rgba(0, 255, 255, 0.15)",
+    backdropFilter: "blur(12px)",
   };
 
-  const headingStyle = {
-    fontSize: "56px",
-    background: "linear-gradient(90deg, #00ffff, #ff00ff)",
-    WebkitBackgroundClip: "text",
-    WebkitTextFillColor: "transparent",
-    textShadow: "0 0 15px #00ffff, 0 0 30px #ff00ff",
+  const handleFlashClick = () => {
+    const flash = document.createElement("div");
+    flash.style.position = "fixed";
+    flash.style.top = 0;
+    flash.style.left = 0;
+    flash.style.width = "100vw";
+    flash.style.height = "100vh";
+    flash.style.background = "radial-gradient(circle, #00ffffaa 0%, transparent 80%)";
+    flash.style.pointerEvents = "none";
+    flash.style.zIndex = 9999;
+    flash.style.animation = "flashFade 0.5s ease-out";
+    document.body.appendChild(flash);
+    setTimeout(() => flash.remove(), 500);
   };
 
   return (
     <main style={{ padding: "40px", fontFamily: "Segoe UI, sans-serif", color: "white" }}>
+      {/* Neon Name */}
       <motion.h1
-        initial={{ opacity: 0, y: -40 }}
-        animate={{ opacity: 1, y: 0 }}
+        onClick={handleFlashClick}
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1 }}
-        style={headingStyle}
+        style={{
+          fontSize: "60px",
+          fontWeight: "bold",
+          background: "linear-gradient(90deg, #00ffff, #ff00ff)",
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
+          textShadow: "0 0 20px #00ffff, 0 0 30px #ff00ff, 0 0 50px #ff00ff",
+          cursor: "pointer",
+        }}
       >
         Qawser Qayoom
       </motion.h1>
@@ -40,14 +57,8 @@ export default function QawserPortfolio() {
         Business Developer | Marketing & Sales | AI Tools | BBA Graduate
       </motion.p>
 
-      {/* About */}
-      <motion.section
-        style={sectionStyle}
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-      >
+      {/* Sections */}
+      <motion.section style={sectionStyle} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
         <h2>About Me</h2>
         <p>
           I’m a BBA graduate from PTU with experience in business development,
@@ -56,14 +67,7 @@ export default function QawserPortfolio() {
         </p>
       </motion.section>
 
-      {/* Skills */}
-      <motion.section
-        style={sectionStyle}
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-      >
+      <motion.section style={sectionStyle} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
         <h2>Skills</h2>
         <ul>
           <li>Business Development & Strategy</li>
@@ -73,27 +77,13 @@ export default function QawserPortfolio() {
         </ul>
       </motion.section>
 
-      {/* Projects */}
-      <motion.section
-        style={sectionStyle}
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-      >
+      <motion.section style={sectionStyle} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
         <h2>Projects</h2>
         <p><strong>SmartRetail-Kit</strong> – Built AI-based tools for automating sales, reports, and reminders.</p>
         <p><strong>Marketing Campaign for Mir Electronics</strong> – Increased footfall and conversion through automation and dashboards.</p>
       </motion.section>
 
-      {/* Achievements */}
-      <motion.section
-        style={sectionStyle}
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-      >
+      <motion.section style={sectionStyle} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
         <h2>Achievements</h2>
         <ul>
           <li>Star Performer – Bajaj Allianz</li>
@@ -102,24 +92,12 @@ export default function QawserPortfolio() {
         </ul>
       </motion.section>
 
-      {/* Contact */}
-      <motion.section
-        style={sectionStyle}
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-      >
+      <motion.section style={sectionStyle} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
         <h2>Contact</h2>
         <p>Email: gyawer575@gmail.com</p>
         <p>
           LinkedIn:{" "}
-          <a
-            href="https://www.linkedin.com/in/qawser-qayoom-113b521b3"
-            target="_blank"
-            rel="noreferrer"
-            style={{ color: "#00ffff" }}
-          >
+          <a href="https://www.linkedin.com/in/qawser-qayoom-113b521b3" target="_blank" rel="noreferrer" style={{ color: "#00ffff" }}>
             Visit Profile
           </a>
         </p>
