@@ -43,7 +43,7 @@ export default function QawserPortfolio() {
           textShadow: "0 0 6px #00ffff",
           whiteSpace: "nowrap",
           overflow: "hidden",
-          animation: "typing 3s steps(22, end) forwards, blink 0.7s step-end infinite",
+          animation: "typing 3s steps(30, end) forwards, blink 0.7s step-end infinite",
           borderRight: "2px solid #00ffff",
           cursor: "pointer",
         }}
