@@ -1,3 +1,13 @@
+/* Body with solid black background */
+body {
+  margin: 0;
+  background-color: #000000; /* Clean black */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* Sharp glowing light blue + golden name */
 .glow-text {
   display: inline-block;
   font-size: 60px;
@@ -5,27 +15,45 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #00ffff;
   text-shadow:
-    0 0 10px #00ffff,
-    0 0 20px #00ffff,
-    0 0 40px #FFD700,
-    0 0 80px #FFD700;
+    0 0 2px #00ffff,
+    0 0 6px #00ffff,
+    0 0 12px #FFD700;
   white-space: nowrap;
   overflow: hidden;
   border-right: 2px solid #00ffff;
 }
 
+/* Typing effect */
 .typing-text {
   width: 0;
   animation: typing 3s steps(20, end) forwards, blink 0.7s step-end infinite;
 }
 
+/* Typing keyframes */
 @keyframes typing {
   from { width: 0; }
-  to { width: 20ch; } /* Enough for “Qawser Qayoom” */
+  to { width: 20ch; } /* Adjust if needed */
 }
 
+/* Cursor blink */
 @keyframes blink {
   50% {
     border-color: transparent;
   }
+}
+
+/* Lightning ripple flash */
+@keyframes flashFade {
+  0% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* General links */
+a {
+  color: #00ffff;
+  text-decoration: none;
 }
