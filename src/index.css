@@ -1,56 +1,31 @@
-body {
-  margin: 0;
-  background-color: #0f0f0f;
+.glow-text {
+  display: inline-block;
+  font-size: 60px;
+  font-weight: bold;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color: white;
-  overflow-x: hidden;
+  color: #00ffff;
+  text-shadow:
+    0 0 10px #00ffff,
+    0 0 20px #00ffff,
+    0 0 40px #FFD700,
+    0 0 80px #FFD700;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #00ffff;
+}
+
+.typing-text {
+  width: 0;
+  animation: typing 3s steps(20, end) forwards, blink 0.7s step-end infinite;
 }
 
 @keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
+  from { width: 0; }
+  to { width: 20ch; } /* Enough for “Qawser Qayoom” */
 }
 
 @keyframes blink {
   50% {
     border-color: transparent;
   }
-}
-
-@keyframes flashFade {
-  0% {
-    opacity: 0.9;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-.glow-text {
-  color: #FFD700;
-  font-size: 60px;
-  font-weight: bold;
-  text-shadow:
-    0 0 10px #FFD700,
-    0 0 20px #FFD700,
-    0 0 40px #FFA500,
-    0 0 80px #FFA500;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  cursor: pointer;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 2px solid #FFD700;
-}
-
-.typing-text {
-  animation: typing 3s steps(20) forwards, blink 0.7s step-end infinite;
-}
-
-a {
-  color: #00ffff;
-  text-decoration: none;
 }
